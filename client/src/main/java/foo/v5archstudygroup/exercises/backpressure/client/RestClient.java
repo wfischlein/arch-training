@@ -22,7 +22,7 @@ public class RestClient {
         var requestFactory = new SimpleClientHttpRequestFactory();
         // Always remember to set timeouts!
         requestFactory.setConnectTimeout(100);
-        requestFactory.setReadTimeout(1000);
+        requestFactory.setReadTimeout(-1);
         restTemplate = new RestTemplate(List.of(new ProcessingRequestMessageConverter()));
         restTemplate.setRequestFactory(requestFactory);
         this.serverUri = serverUri;
